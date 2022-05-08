@@ -208,15 +208,12 @@ float node::eval(float t){
             break;
         case token::Type::Operator: 
             if(r.binary){
-                //cout << "AAA";
                 float a = left -> eval(t);
-                //cout << "BBB";
                 float b = right ->  eval(t);
                 res = evalBin(a,b,r.st[0]);
             };
             break;
         case token::Type::Function:
-        //cout << "CCC";
             res = funcEval(left -> eval(t),r.st);
             break;
     };//switch
