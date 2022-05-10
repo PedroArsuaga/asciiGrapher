@@ -57,6 +57,17 @@ void drawCurve(WINDOW *canvas, WINDOW *info, char *coordx, char *coordy,int colo
         attron(COLOR_PAIR(RED)); mvwaddstr(info,16,(width/4) + 25, "ERROR"); attroff(COLOR_PAIR(RED));
     }//if else
 };
+void drawLine(WINDOW *canvas, int x0, int y0, int xf, int yf){
+    int x,y,t;
+    int canvasW = getmaxx(canvas);
+    int canvasH = getmaxy(canvas);
+    for(int i = 0; i <= 10; i++){
+        t = i/10;
+        x = round(xf*t + x0*(1 - t));
+        y = round(yf*t + y0*(1 - t));
+        mvwaddch(canvas,-y + (canvasH / 2), x + (canvasW / 2),'#');
+    };
+};
 
 
 char * coordx,  *coordy;
