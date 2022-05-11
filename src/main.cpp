@@ -58,11 +58,11 @@ void drawCurve(WINDOW *canvas, WINDOW *info, char *coordx, char *coordy,int colo
     }//if else
 };
 void drawLine(WINDOW *canvas, int x0, int y0, int xf, int yf){
-    int x,y,t;
+    int x,y; float t;
     int canvasW = getmaxx(canvas);
     int canvasH = getmaxy(canvas);
-    for(int i = 0; i <= 100; i++){
-        t = i/100;
+    for(int i = 0; i <= 10; i++){
+        t = double(i)/10;
         x = round(xf*t + x0*(1 - t));
         y = round(yf*t + y0*(1 - t));
         mvwaddch(canvas,-y + (canvasH / 2), x + (canvasW / 2),'#');
@@ -109,7 +109,7 @@ int main(){
         switch(c){
             case '1'://DIBUJAR 
                 echo(); curs_set(1);
-                mvwaddstr(input,6,menuWidth/4,"Ingresar coordenada horizontal:"); box(input,0,0);   //NO SE POR QUÉ PERO NO ANDA SI NO HAY PARÉNTESIS
+                /*mvwaddstr(input,6,menuWidth/4,"Ingresar coordenada horizontal:"); box(input,0,0);  
                 mvwgetstr(input,7,menuWidth/4,coordx);
                 mvwaddstr(input,8,menuWidth/4,"Ingresar coordenada vertical:"); box(input,0,0);
                 mvwgetstr(input,9,menuWidth/4,coordy);
@@ -117,8 +117,8 @@ int main(){
                 mvwaddstr(input,13,menuWidth/4,"x(t) ="); mvwaddstr(input,13, (menuWidth/4) + 7, coordx);
                 mvwaddstr(input,14,menuWidth/4,"y(t) ="); mvwaddstr(input,14, (menuWidth/4) + 7, coordy);
                 box(input,0,0);
-                drawCurve(graph,input,coordx,coordy,WHITE,0,200*314,1);
-                //drawLine(graph,1,1,20,10);
+                drawCurve(graph,input,coordx,coordy,WHITE,0,200*314,1);*/
+                drawLine(graph,1,1,20,10);
                 noecho(); curs_set(0);
                 break;
             case '2'://COLORES
