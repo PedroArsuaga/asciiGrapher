@@ -109,7 +109,7 @@ int main(){
         switch(c){
             case '1'://DIBUJAR 
                 echo(); curs_set(1);
-                /*mvwaddstr(input,6,menuWidth/4,"Ingresar coordenada horizontal:"); box(input,0,0);   //NO SE POR QUÉ PERO NO ANDA SI NO HAY PARÉNTESIS
+                mvwaddstr(input,6,menuWidth/4,"Ingresar coordenada horizontal:"); box(input,0,0);   //NO SE POR QUÉ PERO NO ANDA SI NO HAY PARÉNTESIS
                 mvwgetstr(input,7,menuWidth/4,coordx);
                 mvwaddstr(input,8,menuWidth/4,"Ingresar coordenada vertical:"); box(input,0,0);
                 mvwgetstr(input,9,menuWidth/4,coordy);
@@ -117,8 +117,8 @@ int main(){
                 mvwaddstr(input,13,menuWidth/4,"x(t) ="); mvwaddstr(input,13, (menuWidth/4) + 7, coordx);
                 mvwaddstr(input,14,menuWidth/4,"y(t) ="); mvwaddstr(input,14, (menuWidth/4) + 7, coordy);
                 box(input,0,0);
-                drawCurve(graph,input,coordx,coordy,WHITE,0,200*314,1);*/
-                drawLine(graph,1,1,20,10);
+                drawCurve(graph,input,coordx,coordy,WHITE,0,200*314,1);
+                //drawLine(graph,1,1,20,10);
                 noecho(); curs_set(0);
                 break;
             case '2'://COLORES
